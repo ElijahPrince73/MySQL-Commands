@@ -7,3 +7,6 @@
      age INT NOT NULL,
      current_status VARCHAR(100) DEFAULT 'employeed' NOT NULL
  );
+
+ INSERT INTO Employees (first_name, last_name, age)
+ VALUES ('BOB', 'BURGER', 22);
