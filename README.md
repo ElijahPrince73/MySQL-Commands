@@ -1,22 +1,32 @@
 # MySQL-Commands and notes
 
-## Commands
-### Show databases
-``` SHOW DATABASES; ```
+## Creating Databases and Tables
+#### Show databases
+```Javascript 
+ SHOW DATABASES; 
+ ```
 
-### Create Database
-``` CREATE DATABASE <NAME_OF_DB>;```
+#### Create Database
+``` Javascript 
+CREATE DATABASE <NAME_OF_DB>;
+ ```
 
-### Delete Database
-```DROP DATABASE <NAME_OF_DB>;```
+#### Delete Database
+```Javascript  
+DROP DATABASE <NAME_OF_DB>;
+```
 
-### Work with or use database
-``` USE <DB_NAME> ```
+#### Work with or use database
+```Javascript  
+ USE <DB_NAME> 
+```
 
-### See what database we are currently working with
-``` SELECT database() ```
+#### See what database we are currently working with
+```Javascript  
+SELECT database() 
+```
 
-### Create Table
+#### Create Table
 ```Javascript
  CREATE TABLE <TABLE_NAME>
  ( 
@@ -33,20 +43,29 @@
  );
  ```
 
- ### Show Tables
-``` SHOW TABLES ```
+#### Show Tables
+``` Javascript 
+SHOW TABLES 
+ ```
 
-### Show Columns
-``` SHOW COLUMNS FROM <TABLE_NAME> ```
+#### Show Columns
+```Javascript 
+ SHOW COLUMNS FROM <TABLE_NAME> 
+ ```
 
 or 
 
-``` DESC <TABLE_NAME> ```
+``` Javascript 
+DESC <TABLE_NAME> 
+ ```
 
-### Delete Tables
-```DROP TABLE <TABLE_NAME ```
+#### Delete Tables
+```Javascript 
+ DROP TABLE <TABLE_NAME 
+ ```
 
-### Inserting Data into a Table
+## Inserting Data (and a couple of other things)
+#### Inserting Data into a Table
 ```Javascript
  INSERT INTO <TABLE_NAME>(name, age);
  VALUES ('JETSON', 7)
@@ -54,10 +73,10 @@ or
 
  order dosn't matter but we should keep the same format
 
-### Reading Table Data
+#### Reading Table Data
 ``` SELECT * FROM <TABLE_NAME> ```
 
-### Multiple inserts
+#### Multiple inserts
 ```Javascript
 INSERT INTO table_name 
             (column_name, column_name) 
@@ -66,10 +85,10 @@ VALUES      (value, value),
             (value, value);
  ```
 
-### To see Warnings
+#### To see Warnings
 ``` SHOW WARNINGS```
 
-### NULL and NOT_NULL
+#### NULL and NOT_NULL
 
 just add NOT_NULL WHEN CREATING A TABLE
 ```Javascript
@@ -80,7 +99,7 @@ just add NOT_NULL WHEN CREATING A TABLE
  );
  ```
 
-### Setting Default Values
+#### Setting Default Values
 
 Just add DEFAULT 'DEFAULT_VALUE'
 ```Javascript
@@ -101,7 +120,7 @@ Just add DEFAULT 'DEFAULT_VALUE'
  );
  ```
 
- ### Primary Key and Auto Increment
+ #### Primary Key and Auto Increment
  When we need an ID for each cat or user
  ```Javascript
  CREATE TABLE unique_cats
@@ -123,6 +142,33 @@ CREATE TABLE unique_cats2 (
 );
 
  ```
+
+ ## CRUD COMMANDS
+
+ #### Using SELECT To READ
+ To read an entire table and its columns we use the ``` SELECT ``` command
+
+ ```Javascript
+SELECT FROM <TABLE_NAME>
+ ```
+
+But to get only certain colums we use
+``` Javascript
+SELECT <COLUMN_NAME> FROM <TABLE_NAME>;
+ ```
+
+ We can even get more than 1 column as well
+``` Javascript
+SELECT <COLUMN_NAME>, <COLUMN_NAME> FROM <TABLE_NAME>;
+ ```
+
+EX: 
+``` Javascript
+SELECT name, age FROM cats;
+ ```
+
+and we would only get the 2 colums back with all its values
+
 ****
 ## Notes
 #### Databases are made of tables
