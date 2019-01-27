@@ -170,5 +170,78 @@ SELECT name, age FROM cats;
 and we would only get the 2 colums back with all its values
 
 ****
+
+#### Using WHERE
+Using ```WHERE``` allows to find something specifc
+
+``` Javascript
+SELECT <COLUMN_NAME> FROM <TABLE_NAME> WHERE <COLUMN_NAME> = 'CONDITION' ;
+ ```
+
+ EX: 
+ ``` Javascript
+SELECT * FROM cats WHERE age=4;
+
+SELECT * FROM cats WHERE name='Egg';
+ ```
+
+ #### Reading data with aliases
+
+We can change the way we read the data by creating aliases or diplaying one thing as something else
+
+ ``` Javascript
+SELECT <COLUMN_NAME> AS <NAME_WE_WANT_SEE> FROM <TABLE_NAME;
+ ```
+
+ EX:
+ ```Javascript
+ SELECT cat_id AS id FROM cats;
+ ```
+#### The UPDATE Command
+
+Key commands to update data:
+ ```Javascript
+UPDATE,
+SET,
+WHERE
+ ```
+
+ A Good Rule to Follow
+ try ``` SELECT```ing BEFORE UPDATING
+ so we can target exactly what we want to change
+
+ ``` Javascript
+UPDATE <TABLE_NAME> SET <COLUMN_NAME>='WHATEVER WE WANT'
+WHERE <COLUMN_NAME>='WHAT WE ARE CHANGING';
+ ```
+
+ EX: 
+  ``` Javascript
+UPDATE cats SET breed='Shorthair'
+WHERE breed='Tabby';
+ ```
+
+ To get more specific
+  ``` Javascript
+UPDATE cats SET age=14
+WHERE name='Misty';
+ ```
+
+ #### DELETING
+ ```Javascript
+ DELETE FROM <TABLE_NAME> WHERE <COLUMN_NAME>='WHATEVER WE WANT DELETE FROM THE COLUMN';
+ ```
+
+EX:
+  ```Javascript
+ DELETE FROM cats WHERE <COLUMN_NAME>='Egg';
+ ```
+
+Using this command WILL DELETE ALL DATA IN THE TABLE
+
+``` Javascript
+DELETE FROM <TABLE_NAME>;
+ ```
+ Note that there is NO case sensitiviy
 ## Notes
 #### Databases are made of tables
