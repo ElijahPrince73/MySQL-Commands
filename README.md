@@ -243,5 +243,41 @@ Using this command WILL DELETE ALL DATA IN THE TABLE
 DELETE FROM <TABLE_NAME>;
  ```
  Note that there is NO case sensitiviy
+
+## The World of String Functions
+#### Working with concat
+
+Using concat combines columns
+``` Javascript
+SELECT 
+    CONCAT(<COLUMN_NAME>, <COLUMN_NAME>)
+FROM <TABLE_NAME>;
+ ```
+
+ EX:
+ ``` Javascript
+ SELECT
+    CONCAT(FIRST_NAME, ' ',LAST_NAME)
+FROM Authors;
+ ```
+
+#### Concat with seperator
+Used when we have the same seperator
+
+So instead of using a dash to seperate our columns like this
+
+ ``` Javascript
+ SELECT
+    CONCAT(author_fname, '-',author_lname, '-')
+ AS 'Full Name' FROM books;
+ ```
+
+ We can do this instead
+  ``` Javascript
+ SELECT 
+    CONCAT_WS('-' , author_fname, author_lname)
+ AS 'Full Name' FROM books;
+ ```
+
 ## Notes
 #### Databases are made of tables
