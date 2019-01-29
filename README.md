@@ -247,7 +247,7 @@ DELETE FROM <TABLE_NAME>;
 ## The World of String Functions
 #### Working with concat
 
-Using concat combines columns
+Using concat combines columns OR strings
 ``` Javascript
 SELECT 
     CONCAT(<COLUMN_NAME>, <COLUMN_NAME>)
@@ -279,5 +279,82 @@ So instead of using a dash to seperate our columns like this
  AS 'Full Name' FROM books;
  ```
 
+
+#### Using SUBSTRING
+Used to cut down words
+
+When using ```SUBSTRING``` the first index is 1
+
+ ``` Javascript
+ SELECT SUBSTRING('Hello World', 1, 4)
+ ```
+We would get back Hell
+
+We can also use a negative index.
+
+That means we will start from the end of the string and work our way backwards
+
+ ``` Javascript
+ SELECT SUBSTRING('Hello World', -3)
+ ```
+We would get back rld
+
+EX: 
+
+ ``` Javascript
+ SELECT SUBSTRING(<COLUMN_NAME>, INDEX_1, INDEX-2) FROM <TABLE_NAME>;
+ ```
+
+ ``` Javascript
+SELECT SUBSTRING(title, 1, 10) FROM books;
+ ```
+
+#### Using Replace
+Used to replace a part of a string
+This function is case sensetive 
+
+ ``` Javascript
+SELECT REPLACE('Hello World', 'Hell', 'ljflsjfljs') FROM books;
+ ```
+ First is the whole value
+
+ Second value is the what we want to select
+
+ Third is what we what to replace with
+
+
+#### Using Reverse
+reverses strings
+
+```Javascript
+SELECT REVERSE('HELLO WORLD');
+ ```
+
+ #### Using CHAR_LENGTH
+ Counts characters in a string
+ ```Javascript
+SELECT CHAR_LENGTH('HELLO WORLD')
+ ```
+
+ #### UPPER and LOWER
+ Changes a characters case
+ ```Javascript
+SELECT UPPER('hello world')
+ ```
+
+  ```Javascript
+SELECT LOWER('HELLO WORLD')
+ ```
+
+ ```Javascript
+ SELECT UPPER(title) FROM books;
+ ```
+
 ## Notes
 #### Databases are made of tables
+
+#### We can add functions together
+
+ ```Javascript
+ SELECT CONCAT(SUBSTRING(title, 1,10), '...') FROM books;
+ ```
