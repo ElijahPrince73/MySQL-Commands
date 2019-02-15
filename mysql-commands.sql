@@ -43,3 +43,6 @@
 -- SELECT title, CHAR_LENGTH(Title) FROM books;
 
 -- SELECT CONCAT(SUBSTRING(title, 1, 10), '...') AS 'Short Title', CONCAT(author_fname,',' ,author_lname) AS 'Author', CONCAT(stock_quantity, ' in stock') from books;
+
+-- SELECT DISTINCT author_lname from books;
+SELECT DISTINCT CONCAT(author_fname,' ', author_lname) FROM books

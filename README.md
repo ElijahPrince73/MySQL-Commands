@@ -350,6 +350,18 @@ SELECT LOWER('HELLO WORLD')
  SELECT UPPER(title) FROM books;
  ```
 
+## Refining Our Selection
+#### Using DISTINCT
+using ```DISTINCT``` allows us to get only one distinguished value and no duplicates
+
+```Javascript
+SELECT DISTINCT <COLUMN_NAME> from <TABLE_NAME>;
+```
+
+```Javascript
+SELECT DISTINCT author_lname from books;
+```
+
 ## Notes
 #### Databases are made of tables
 
