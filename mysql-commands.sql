@@ -45,4 +45,27 @@
 -- SELECT CONCAT(SUBSTRING(title, 1, 10), '...') AS 'Short Title', CONCAT(author_fname,',' ,author_lname) AS 'Author', CONCAT(stock_quantity, ' in stock') from books;
 
 -- SELECT DISTINCT author_lname from books;
-SELECT DISTINCT CONCAT(author_fname,' ', author_lname) FROM books
+-- SELECT DISTINCT CONCAT(author_fname,' ', author_lname) FROM books
+
+-- SELECT author_lname FROM books ORDER BY author_lname
+-- SELECT author_lname FROM books ORDER BY author_lname DESC
+
+-- SELECT title, pages FROM books ORDER BY released_year;
+
+-- SELECT title, released_year FROM books ORDER BY released_year LIMIT 5;
+
+-- SELECT title, author_fname FROM books WHERE author_fname LIKE '%da%';
+
+-- SELECT title, stock_quantity FROM books WHERE stock_quantity LIKE '____';
+
+
+
+-- SELECT title from books where title LIKE '%stories%';
+
+-- SELECT title, pages FROM books ORDER BY pages DESC LIMIT 1;
+
+-- SELECT CONCAT(title, ' - ',released_year)
+
+-- SELECT title, author_lname FROM books WHERE author_lname LIKE "% %";
+
+SELECT title, released_year, stock_quantity FROM books ORDER BY stock_quantity LIMIT 3;

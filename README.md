@@ -362,6 +362,64 @@ SELECT DISTINCT <COLUMN_NAME> from <TABLE_NAME>;
 SELECT DISTINCT author_lname from books;
 ```
 
+#### Sorting Data with ORDER BY
+This commmand allows us to have a sort order on a column
+and is ascending by default
+
+This command also works for numbers to
+
+```Javascript
+SELECT <COLUMN_NAME> FROMM <TABLE_NAME> ORDER BY <COLUMN_NAME>
+```
+
+default ascending 
+```Javascript
+SELECT author_lname FROM books ORDER BY author_lname
+```
+
+```Javascript
+SELECT author_lname FROM books ORDER BY author_lname DESC
+```
+
+We dont have to always use the same column name
+```Javascript
+SELECT title, pages FROM books ORDER BY released_year;
+```
+
+#### Using LIMIT
+Limits the amount read
+
+```Javascript
+SELECT <COLUMN_NAME> FROM <TABLE_NAME> LIMIT <NUMBER>
+```
+
+```Javascript
+SELECT title, released_year FROM books ORDER BY released_year LIMIT 5;
+```
+
+#### Better Searches with LIKE
+This commmand will get us results that kinda match our search
+
+```Javascript
+SELECT <COLUMN_NAME> FROM <TABLE_NAME> WHERE <COLUMN_NAME> LIKE '%whatever%';
+```
+```Javascript
+SELECT title, author_fname FROM books WHERE author_fname LIKE '%da%';
+```
+
+Things that start with whatever we want
+```Javascript
+SELECT title, author_fname FROM books WHERE author_fname LIKE 'da%';
+```
+We can also use underscores to specify by the character count
+
+Each underscore represents how many characters we are searching by, so 4 underscores means we are searching for a word or 2 that has 4 characters
+
+```Javascript
+SELECT title, stock_quantity FROM books WHERE stock_quantity LIKE '____';
+```
+
+
 ## Notes
 #### Databases are made of tables
 
