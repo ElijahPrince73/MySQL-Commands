@@ -58,14 +58,13 @@
 
 -- SELECT title, stock_quantity FROM books WHERE stock_quantity LIKE '____';
 
-
-
 -- SELECT title from books where title LIKE '%stories%';
 
 -- SELECT title, pages FROM books ORDER BY pages DESC LIMIT 1;
 
--- SELECT CONCAT(title, ' - ',released_year)
+-- SELECT CONCAT(title, ' - ',released_year) AS summary FROM books
+-- ORDER BY released_year DESC Limit 3;
 
 -- SELECT title, author_lname FROM books WHERE author_lname LIKE "% %";
 
-SELECT title, released_year, stock_quantity FROM books ORDER BY stock_quantity LIMIT 3;
+-- SELECT title, released_year, stock_quantity FROM books ORDER BY stock_quantity LIMIT 3;
