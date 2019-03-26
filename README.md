@@ -418,7 +418,35 @@ Each underscore represents how many characters we are searching by, so 4 undersc
 ```Javascript
 SELECT title, stock_quantity FROM books WHERE stock_quantity LIKE '____';
 ```
+#### Cross joins
 
+Allows us to find orders made by a specific person
+```Javascript 
+SELECT * FROM orders WHERE customer_id = (
+    SELECT id
+FROM customers
+WHERE last_name='George'
+);
+```
+
+#### Inner Join
+Only joins the table if the values match
+
+This code works but its better to use other one below
+```Javascript
+SELECT * FROM customers, orders  WHERE customers.id = orders.customer_id;
+```
+
+Or
+
+Description: 
+We select whatever we want from a table, then join with another table.
+We use whatever condition on the function.
+```Javascript
+SELECT * FROM customers
+JOIN orders
+    ON customers.id = orders.customer_id;
+```
 
 ## Notes
 #### Databases are made of tables
