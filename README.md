@@ -1,5 +1,5 @@
-# MySQL-Commands and notes
 
+# MySQL-Commands and notes
 ## Creating Databases and Tables
 #### Show databases
 ```Javascript 
@@ -446,6 +446,57 @@ We use whatever condition on the function.
 SELECT * FROM customers
 JOIN orders
     ON customers.id = orders.customer_id;
+```
+
+
+#### Left Joins
+
+Select everything from our first table then joins them with our second matching records from our first table
+
+```Javascript
+SELECT * FROM customers
+LEFT JOIN orders
+    ON customers.id = orders.customer_id;
+    
+SELECT first_name, last_name, order_date, amount
+FROM customers
+LEFT JOIN orders
+    ON customers.id = orders.customer_id; 
+
+SELECT 
+    first_name, 
+    last_name,
+    IFNULL(SUM(amount), 0) AS total_spent
+FROM customers
+LEFT JOIN orders
+    ON customers.id = orders.customer_id
+GROUP BY customers.id
+ORDER BY total_spent;
+```
+
+#### Right Join
+Selects everythying from our last table and merges them with our first table along with any match
+```Javascript
+SELECT *
+FROM customers
+    RIGHT JOIN orders
+    ON customers.id = orders.customer_id;
+```
+
+#### WORKING WITH ON DELETE CASCADE
+
+This will allow us to delete a row or anything that has  foriegn key tied to another table
+ 
+```Javascript
+CREATE TABLE orders(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_date DATE,
+    amount DECIMAL(8,2),
+    customer_id INT,
+    FOREIGN KEY(customer_id) 
+        REFERENCES customers(id)
+        ON DELETE CASCADE
+);
 ```
 
 ## Notes

@@ -21,6 +21,11 @@
 
 -- SELECT * FROM customers, orders  WHERE customers.id = orders.customer_id
 
-SELECT * FROM customers
-JOIN orders
+-- SELECT * FROM customers
+-- JOIN orders
+--     ON customers.id = orders.customer_id;
+
+SELECT *
+FROM customers
+    RIGHT JOIN orders
     ON customers.id = orders.customer_id;
