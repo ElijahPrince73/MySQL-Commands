@@ -507,3 +507,11 @@ CREATE TABLE orders(
  ```Javascript
  SELECT CONCAT(SUBSTRING(title, 1,10), '...') FROM books;
  ```
+
+#### If null
+
+ ```Javascript
+ SELECT author_first_name, IFNULL(title, 'missing') from books
+ ```
+
+ the IFNULL function takes in a selector and if it null replace it with something else
