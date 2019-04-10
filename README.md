@@ -499,6 +499,27 @@ CREATE TABLE orders(
 );
 ```
 
+#### Referencing a foreign key
+We need to create tables first
+
+```Javascript
+-- CREATE TABLE users(
+--     id INTEGER AUTO_INCREMENT PRIMARY KEY,
+--     username VARCHAR(255) UNIQUE,
+--     create_at TIMESTAMP DEFAULT NOW()
+-- );
+
+CREATE TABLE photos(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    image_url VARCHAR(255) NOT NULL,
+    user_id INT NOT NULL,
+    create_at TIMESTAMP DEFAULT NOW()
+
+    // This code tells us that our user_id is associated with the users id table
+    FOREIGN KEY(user_id) REFERENCES users(id)
+)
+```
+
 ## Notes
 #### Databases are made of tables
 
